@@ -1,0 +1,40 @@
+
+<div>
+<h2 class="page-header">Register</h2>
+<form (submit)="onRegisterSubmit()" >
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input type="text" [(ngModel)]="name" name="name" class="form-control" id="name" placeholder="Enter Name">
+  </div>
+  <div class="form-group">
+    <label for="username">Username</label>
+    <input type="text" [(ngModel)]="username" name="username" class="form-control" id="username" placeholder="Enter Username">
+  </div>
+  <div class="form-group">
+    <label for="email">Email</label>
+    <input type="email" [(ngModel)]="email" name="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter Email">
+  </div>
+  <div class="form-group" >
+    <label for="password">Password</label>
+    <input type="text" [(ngModel)]="text" [hidden]="!name || !username || !email"  name="password" class="form-control" id="password" *ngIf="true" >
+  </div>
+  <div class="form-group">
+   <label for="role">Register as : </label>
+      <label class="radio-inline">
+         <input type="radio" name="radio" value="1"  [checked]="radio === 1" (change)="onProfitSelectionChange('Admin')" >Admin
+       </label>
+       <label class="radio-inline">
+         <input type="radio" name="radio" value="2"  [checked]="radio === 2" (change)="onProfitSelectionChange('Moderator')" >Moderator
+       </label>
+       <label class="radio-inline">
+          <input type="radio" name="radio" value="3"  [checked]="radio === 3" (change)="onProfitSelectionChange('User')" >User
+        </label>
+        <label class="radio-inline">
+          <input type="radio" name="radio" value="4"  [checked]="radio === 4" (change)="onProfitSelectionChange('Spectator')">Spectator
+        </label>
+
+  </div>
+
+  <input type="submit" class="btn btn-primary" value="Submit">
+</form>
+</div>
